@@ -77,7 +77,7 @@ values = [3, 5, 6, 9, 1, 2, 0, -1]
 
 ### Output:
 
-
+![image](https://github.com/shahid7345/AI_Lab_2023-24/blob/main/ai%20exp%202.png)
 
 ### Result:
 Thus the depth first search order was found sucessfully.
