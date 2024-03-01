@@ -80,7 +80,7 @@ print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX))
 
 
 ### Output:
-
+![image](https://github.com/shahid7345/AI_Lab_2023-24/blob/main/Screenshot%202024-03-01%20214608.png)
 
 
 ### Result:
