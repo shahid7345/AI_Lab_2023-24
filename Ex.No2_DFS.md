@@ -14,57 +14,24 @@ To write a python program to implement Depth first Search.
 ### Program:
 
 ```
-# Initial values of Alpha and Beta
-MAX, MIN = 1000, -1000
- 
-# Returns optimal value for current player
-#(Initially called for root and maximizer)
-def minimax(depth, nodeIndex, maximizingPlayer,
-            values, alpha, beta):
-  
-    # Terminating condition. i.e
-    # leaf node is reached
-    if depth == 3:
-        return values[nodeIndex]
- 
-    if maximizingPlayer:
-      
-        best = MIN
- 
-        # Recur for left and right children
-        for i in range(0, 2):
-             
-            val = minimax(depth + 1, nodeIndex * 2 + i,
-                          False, values, alpha, beta)
-            best = max(best, val)
-            alpha = max(alpha, best)
- 
-            # Alpha Beta Pruning
-            if beta <= alpha:
-                break
-          
-        return best
-      
-    else:
-        best = MAX
- 
-        # Recur for left and
-        # right children
-        for i in range(0, 2):
-          
-            val = minimax(depth + 1, nodeIndex * 2 + i,
-                            True, values, alpha, beta)
-            best = min(best, val)
-            beta = min(beta, best)
- 
-            # Alpha Beta Pruning
-            if beta <= alpha:
-                break
-          
-        return best
-      
-values = [3, 5, 6, 9, 1, 2, 0, -1] 
-  print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX))
+graph = {
+'5' : ['3','7'],
+'3' : ['2', '4'],
+'7' : ['8'],
+'2' : [],
+'4' : ['8'],
+'8' : []
+}
+visited = set()
+def dfs(visited, graph, node):
+    if node not in visited:
+        print (node,end=' ')
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+            
+print("Following is the Depth-First Search")
+dfs(visited, graph, '5')
 ```
 
 
@@ -76,8 +43,8 @@ values = [3, 5, 6, 9, 1, 2, 0, -1]
 
 
 ### Output:
+![image](https://github.com/shahid7345/AI_Lab_2023-24/assets/160318155/ac6f3a05-69aa-4310-b0b7-a9c3a86f1f58)
 
-![image](https://github.com/shahid7345/AI_Lab_2023-24/blob/main/ai%20exp%202.png)
 
 ### Result:
 Thus the depth first search order was found sucessfully.
